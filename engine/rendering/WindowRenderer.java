@@ -1,4 +1,4 @@
-package rendering;
+package engine.rendering;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -8,8 +8,8 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import rendering.classes.FramePart;
-import rendering.classes.Pixel;
+import engine.rendering.classes.FramePart;
+import engine.rendering.classes.Pixel;
 
 public class WindowRenderer extends JPanel {
 

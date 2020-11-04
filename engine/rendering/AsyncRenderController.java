@@ -1,4 +1,4 @@
-package rendering;
+package engine.rendering;
 
 public class AsyncRenderController extends Thread {
     public WindowRenderer renderer;

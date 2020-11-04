@@ -1,4 +1,4 @@
-package rendering.classes;
+package engine.rendering.classes;
 
 import java.awt.Color;
 

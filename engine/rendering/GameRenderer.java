@@ -1,4 +1,4 @@
-package rendering;
+package engine.rendering;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-import rendering.classes.FramePart;
+import engine.rendering.classes.FramePart;
 
 public class GameRenderer {
     public JFrame frame;
