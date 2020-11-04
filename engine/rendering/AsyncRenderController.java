@@ -1,5 +1,7 @@
 package engine.rendering;
 
+import engine.GameEngine;
+
 public class AsyncRenderController extends Thread {
     public WindowRenderer renderer;
     public int frameRate;
@@ -12,9 +14,8 @@ public class AsyncRenderController extends Thread {
     public void run() {
         renderer.Render();
         try {
-            Thread.sleep(1000 / frameRate);
+            Thread.sleep((int)(1000 / frameRate));
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         new AsyncRenderController(renderer, frameRate).start();

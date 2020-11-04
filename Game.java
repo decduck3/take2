@@ -10,6 +10,7 @@ import engine.rendering.classes.Pixel;
 
 class Game{
     public static GameEngine engine;
+    public static boolean isRunning = true;
     public static void main(String[] args){
         engine = new GameEngine();
 
@@ -17,11 +18,13 @@ class Game{
 
         FramePart background = background();
 
-        while(true){
+        while(isRunning){
 
             engine.renderer.AddRender(background);
             engine.renderer.AddRender(createCube());
             engine.renderer.PushRender();
+
+            isRunning = engine.renderer.frame != null;
             
         }
         
