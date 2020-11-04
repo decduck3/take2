@@ -11,6 +11,7 @@ import engine.rendering.classes.Pixel;
 class Game{
     public static GameEngine engine;
     public static void main(String[] args){
+        engine = new GameEngine();
 
         engine.renderer.StartRenderCycle();
 
