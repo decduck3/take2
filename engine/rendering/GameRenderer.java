@@ -43,7 +43,7 @@ public class GameRenderer {
     }
 
     public void StartRenderCycle(){
-        new AsyncRenderController(wRenderer).start();
+        new AsyncRenderController(wRenderer, 60).start();
     }
 
     public int getWidth(){

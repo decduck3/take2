@@ -36,12 +36,11 @@ class Game{
         return new FramePart(results);
     }
 
-
     public static FramePart createCube(){
         List<Pixel> results = new ArrayList<Pixel>();
         for(int x = 0; x < new Random().nextInt(engine.renderer.getWidth()); x++){
             for(int y = 0; y < new Random().nextInt(engine.renderer.getHeight());y++){
-                results.add(new Pixel(x, y,  Color.BLACK));
+                results.add(new Pixel(x, y,  Color.BLUE));
             }
         }
         return new FramePart(results);
