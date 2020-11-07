@@ -2,11 +2,15 @@ package engine.rendering;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
+import engine.GameEngine;
 import engine.rendering.classes.FramePart;
 
 public class GameRenderer {
@@ -16,14 +20,44 @@ public class GameRenderer {
 
     public List<FramePart> toPush;
 
-    public GameRenderer(){
+    public GameEngine engine;
+
+    public GameRenderer() {
         wRenderer = new WindowRenderer();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         frame = new JFrame();
-        frame.setSize((int)screenSize.getWidth(), (int)screenSize.getHeight());
+        frame.setSize((int) screenSize.getWidth(), (int) screenSize.getHeight());
         frame.setVisible(true);
-        wRenderer.window = frame;
+        wRenderer.frame = frame;
+        wRenderer.panel = new JPanel();
+        wRenderer.frame.add(wRenderer.panel);
+        wRenderer.gameRenderer = this;
         frame.setContentPane(wRenderer);
+        frame.addWindowListener(new WindowListener() {
+            @Override
+            public void windowOpened(WindowEvent e) {
+            }
+            @Override
+            public void windowClosing(WindowEvent e) {
+                engine.isRunning = false;
+            }
+            @Override
+            public void windowClosed(WindowEvent e) {
+                engine.isRunning = false;
+            }
+            @Override
+            public void windowIconified(WindowEvent e) {
+            }
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+            }
+            @Override
+            public void windowActivated(WindowEvent e) {
+            }
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+            }
+        });
     }
 
     public void AddRender(FramePart toAdd){

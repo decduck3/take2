@@ -18,6 +18,8 @@ public class AsyncRenderController extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        new AsyncRenderController(renderer, frameRate).start();
+        if(renderer.gameRenderer.engine.isRunning){
+            new AsyncRenderController(renderer, frameRate).start();
+        }
     }
 }
