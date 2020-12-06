@@ -45,8 +45,7 @@ public class WindowRenderer extends JPanel {
             for(FramePart fp : buffer.get(0)){
                 int[] dim = fp.getPartDimensions();
                 //System.out.println(dim[0] + "-" + dim[1] + ":" + dim[2] + "-" + dim[3]);
-                panel.repaint(dim[0], dim[1], dim[2], dim[3]);
-                frame.paintAll(frame.getGraphics());
+                frame.repaint(dim[0], dim[1], dim[2], dim[3]);
             }
             buffer.remove(0);
         }
